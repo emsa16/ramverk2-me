@@ -1,0 +1,45 @@
+{
+  "name": "ramverk2-me",
+  "version": "1.0.0",
+  "description": "Me page for ramverk2",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./bin/www"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emsa16/ramverk2-me.git"
+  },
+  "author": "Emil Sandberg",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/emsa16/ramverk2-me/issues"
+  },
+  "homepage": "https://github.com/emsa16/ramverk2-me#readme",
+  "devDependencies": {
+    "clean-css-cli": "^4.1.10",
+    "codecov": "^3.0.0",
+    "coveralls": "^3.0.0",
+    "eslint": "^4.11.0",
+    "eslint-plugin-pug": "^1.1.1",
+    "eslint-plugin-react": "^7.4.0",
+    "html-minifier": "^3.5.6",
+    "htmlhint": "^0.9.13",
+    "js-yaml": "^3.10.0",
+    "jsonlint": "^1.6.2",
+    "mocha": "^4.0.1",
+    "nyc": "^11.3.0",
+    "stylelint": "^8.2.0",
+    "uglify-es": "^3.1.9"
+  },
+  "dependencies": {
+    "express": "^4.16.2",
+    "body-parser": "~1.18.2",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "jade": "~1.11.0",
+    "morgan": "~1.9.0",
+    "serve-favicon": "~2.4.5"
+  }
+}
