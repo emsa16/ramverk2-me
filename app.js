@@ -2,7 +2,7 @@
 
 var express = require('express');
 var path = require('path');
-// var favicon = require('serve-favicon');
+var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
@@ -16,9 +16,9 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
-// if (app.get('env') === 'development') {
-//     app.locals.pretty = true;
-// }
+if (app.get('env') === 'development') {
+    app.locals.pretty = true;
+}
 
 // This is middleware called for all routes.
 // Middleware takes three parameters.
@@ -28,8 +28,7 @@ app.use((req, res, next) => {
     next();
 });
 
-// uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -57,17 +56,5 @@ app.use(function(err, req, res, next) {
     res.status(err.status || 500);
     res.render('error');
 });
-
-// // Note the error handler takes four arguments
-// app.use((err, req, res, next) => {
-//     if (res.headersSent) {
-//         return next(err);
-//     }
-//     err.status = err.status || 500;
-//     res.status(err.status);
-//     res.render("error", {
-//         error: err
-//     });
-// });
 
 module.exports = app;
