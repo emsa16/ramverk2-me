@@ -2,7 +2,7 @@
   "name": "ramverk2-me",
   "version": "1.0.0",
   "description": "Me page for ramverk2",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node ./bin/www"
@@ -34,12 +34,12 @@
     "uglify-es": "^3.1.9"
   },
   "dependencies": {
-    "express": "^4.16.2",
     "body-parser": "~1.18.2",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
-    "jade": "~1.11.0",
+    "express": "~4.15.5",
     "morgan": "~1.9.0",
+    "pug": "2.0.0-beta11",
     "serve-favicon": "~2.4.5"
   }
 }
