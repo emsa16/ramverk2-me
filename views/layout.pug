@@ -7,11 +7,21 @@ html
             link(rel="stylesheet", href="/css/style.css")
     body
         block header
-            div(class="site-header") Site header
+            div(class="site-header")
+                div(class="site-title") Emils me-sida
+                div(class="site-slogan") Att använda ramverk i Javascript
         block navbar
-            div(class="site-navbar") Site navbar
+            div(class="site-navbar")
+                ul
+                    each url, text in navbar
+                        li
+                            if current === url
+                                a(class='current' href=url) #{text}
+                            else
+                                a(href=url) #{text}
         block main
             main(class="main") Mainblock
         block footer
             div(class="site-footer")
-                p Copyright (c) by Emil Sandberg
+                hr
+                p Copyright &copy; by Emil Sandberg
