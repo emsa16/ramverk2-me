@@ -15,7 +15,7 @@
 
 Alternativt:
 
-    $ DBWEBB_PORT=XXXX npm start
+    $ env DBWEBB_PORT=XXXX npm start
 
 
 BTH 2017
