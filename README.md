@@ -6,16 +6,26 @@
 [![Test Coverage](https://api.codeclimate.com/v1/badges/e01f59ff40dc859e5645/test_coverage)](https://codeclimate.com/github/emsa16/ramverk2-me/test_coverage)
 [![BCH compliance](https://bettercodehub.com/edge/badge/emsa16/ramverk2-me?branch=master)](https://bettercodehub.com/)
 
-
+## Installera projektet
     $ git clone https://github.com/emsa16/ramverk2-me
     $ cd ramverk2-me
-    $ make install
-    $ make test
-    $ npm start
+    $ npm|make install
+    $ npm|make test
 
-Alternativt:
+Såväl `npm` som `make` är möjliga att köra tillsammans med kommandona `install` och `test`
 
-    $ env DBWEBB_PORT=XXXX npm start
+## Kör igång Express-servern
+    $ [env DBWEBB_PORT=XXXX] npm start     # DBWEBB_PORT anger vilken port servern körs på, default är 3000
+
+## Köra projektet i Docker
+    $ npm run|make node1            # node 9-alpine
+    $ npm run|make node2            # node 8-alpine
+    $ npm run|make node3            # node 6-alpine
+    $ npm run|make docker-start     # Kör alla tre containers
+    $ npm run|make docker-stop      # Stoppar alla aktiva containers
+    $ npm run|make docker-build     # Bygger ovan nämnda images från respektive Dockerfile
+
+Även alla dessa kommandon kan alltså köras i både `make` och `npm`.
 
 
 BTH 2017
