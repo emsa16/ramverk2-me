@@ -5,7 +5,14 @@
   "main": "app.js",
   "scripts": {
     "test": "make test",
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "docker-build": "docker-compose build",
+    "docker-push": "docker-compose push",
+    "docker-start": "docker-compose up -d",
+    "docker-stop": "docker-compose down",
+    "node1": "docker-compose up -d node9",
+    "node2": "docker-compose up -d node8",
+    "node3": "docker-compose up -d node6"
   },
   "repository": {
     "type": "git",
