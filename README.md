@@ -25,7 +25,9 @@ Såväl `npm` som `make` är möjliga att köra tillsammans med kommandona `inst
     $ npm run|make docker-stop      # Stoppar alla aktiva containers
     $ npm run|make docker-build     # Bygger ovan nämnda images från respektive Dockerfile
 
-Även alla dessa kommandon kan alltså köras i både `make` och `npm`.
+Alla dessa kommandon kan alltså också köras med både `make` och `npm run`.
 
+## Ladda ner projektets image
+https://store.docker.com/community/images/emsa16/ramverk2-me
 
 BTH 2017

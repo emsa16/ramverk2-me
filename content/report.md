@@ -32,9 +32,29 @@ För enkelhetens skull så använder jag nästan exakt samma markdown-filer som 
 
 
 
-
 Kursmoment 02
 -------------
+
+### Har du jobbat med Docker eller andra virtualiseringstekniker innan?
+Docker är nytt för mig, även om jag stött på det tidigare när jag inventerade mina kunskapsbrister gällande PHP, där den dök upp som ett bra testverktyg med virtualisering. Tidigare har jag erfarenhet av VirtualBox samt Cordova som virtualiseringstekniker. VirtualBox är det ett bra tag sedan jag provade men jag har goda minnen av det, det kändes som ett mycket bra sätt att leka runt i en Linux-miljö. Cordova däremot var besvärligt vill jag minnas. Vi använde den i webapp-kursen och det var problem med att få den att kommunicera med yttre tjänster såsom kamera och liknande. Jag ställde mig därför aningen reserverat till Docker inledningsvis. Dessutom sitter jag just nu på en ganska klen laptop med endast 4GB RAM, så det finns en oro för att en massa virtuella maskiner och containers ska sänka min maskin.
+
+
+### Hur ser du på möjligheterna att använda dig av Docker för att jobba med tester av ditt repo?
+Docker känns mycket lämpat för att kunna testa samma projekt i olika miljöer och olika versioner av exempelvis PHP eller Node. Exakt hur testerna ska gå till återstår att se, men man kan i alla fall nu se i all enkelhet att ens projekt rullar i olika miljöer, vilket är bra. Med hjälp av docker-compose känns det superenkelt att ställa upp en massa olika testmiljöer som kan köras samtidigt. Detta känns som en bra grund för organiserat och omfattande testande.
+
+
+### Gick allt smidigt eller stötte du på problem?
+Docker känns som magi. Allting går alldeles för smidigt och snabbt och användbart för att vara sant. Visst bråkade det lite emellanåt, men jag tror att det var för att jag tagit bort images jag tänkte inte användes längre, men i själva verket behövdes de nånstans vilket ledde till sura miner från Docker. Det hela löstes dock enkelt med att rensa bort alla images och dra ner på nytt endast det jag behövde och bygga om mina egna images.
+
+Vad är haken med Docker? Hur kan det fungera så smidigt? Jag märker att det laddas ner många stora images och mitt lagringsutrymme är rejält begränsat så jag har redan gjort det till en vana att rensa bland images med jämna mellanrum. Men annars då? Finns det en möjlighet att det blir tungrott i nåt skede med många containers? Projekten blir ju inte direkt lättviktiga. Samtidigt så är det detta Docker skryter med. Sammanfattningsvis så får jag alltså säga att första intrycket är väldigt positivt.
+
+Det blir en del kommandon att komma ihåg med Docker. En del av de längre kommandona föll visserligen bort när jag gick över till Dockerfiles, men för att komma ihåg allt så sparar jag alla vanliga kommandon i min Makefile och package.json.
+
+
+### Skapade du din egen image, berätta om den?
+Jag har skapat en image och laddat upp den till [Docker Store](https://store.docker.com/community/images/emsa16/ramverk2-me). Imagen har tre taggar för tre olika versioner av Node: 9, 8 och 6. Alla taggarna innehåller alpine-versioner av Node, vilket är en mer lättviktig variant. Jag har också uppdaterat min docker-compose så att den skapar containers från dessa images istället för att bygga miljön själv. Har man inte dessa images lokalt så laddas de ner när man kör `docker run`. Går man istället via kommandot `docker-compose up` så kommer images att byggas på basen av de Dockerfiles som också ligger i projektet.
+
+
 
 Kursmoment 03
 -------------
