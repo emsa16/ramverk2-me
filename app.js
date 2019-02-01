@@ -1,4 +1,5 @@
 /*eslint no-unused-vars: "off"*/
+"use strict";
 
 var express = require('express');
 var path = require('path');
@@ -19,13 +20,14 @@ if (app.get('env') === 'development') {
     app.locals.pretty = true;
 }
 
-// This is middleware called for all routes.
-// Middleware takes three parameters.
-app.use((req, res, next) => {
-    // console.log(req.method);
-    // console.log(req.path);
-    next();
-});
+// Not needed anymore thanks to logger
+// // This is middleware called for all routes.
+// // Middleware takes three parameters.
+// app.use((req, res, next) => {
+//     console.log(req.method);
+//     console.log(req.path);
+//     next();
+// });
 
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));

@@ -11,14 +11,15 @@ html
                 div(class="site-title") Emils me-sida
                 div(class="site-slogan") Att använda ramverk i Javascript
         block navbar
-            div(class="site-navbar")
-                ul
-                    each url, text in navbar
-                        li
-                            if current === url
-                                a(class='current' href=url) #{text}
-                            else
-                                a(href=url) #{text}
+            if navbar
+                div(class="site-navbar")
+                    ul
+                        each url, text in navbar
+                            li
+                                if current === url
+                                    a(class='current' href=url) #{text}
+                                else
+                                    a(href=url) #{text}
         block main
             main(class="main") Mainblock
         block footer

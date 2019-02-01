@@ -7,6 +7,8 @@
 [![BCH compliance](https://bettercodehub.com/edge/badge/emsa16/ramverk2-me?branch=master)](https://bettercodehub.com/)
 
 ## Installera projektet
+Detta är ett node.js-projekt, så det kräver att såväl node som npm är installerat.
+
     $ git clone https://github.com/emsa16/ramverk2-me
     $ cd ramverk2-me
     $ npm|make install
@@ -30,4 +32,4 @@ Alla dessa kommandon kan alltså också köras med både `make` och `npm run`.
 ## Ladda ner projektets image
 https://store.docker.com/community/images/emsa16/ramverk2-me
 
-BTH 2017
+BTH 2019
