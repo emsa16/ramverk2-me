@@ -174,14 +174,6 @@ tag-prepare:
 # JavaScript
 #
 
-# target: setup-tools-js     - Setup JS development tools.
-.PHONY: setup-tools-js
-setup-tools-js:
-	@$(call HELPTEXT,$@)
-	npm install --save-dev htmlhint stylelint eslint eslint-plugin-pug eslint-plugin-react jsonlint js-yaml html-minifier clean-css-cli uglify-es mocha nyc coveralls codecov
-
-
-
 # target: install-tools-js   - Install JS development tools.
 .PHONY: install-tools-js
 install-tools-js:

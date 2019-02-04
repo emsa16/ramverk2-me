@@ -7,8 +7,10 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var cors = require('cors');
 
 var index = require('./routes/index');
+var api = require('./routes/api');
 
 var app = express();
 
@@ -20,15 +22,7 @@ if (app.get('env') === 'development') {
     app.locals.pretty = true;
 }
 
-// Not needed anymore thanks to logger
-// // This is middleware called for all routes.
-// // Middleware takes three parameters.
-// app.use((req, res, next) => {
-//     console.log(req.method);
-//     console.log(req.path);
-//     next();
-// });
-
+app.use(cors());
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
@@ -37,6 +31,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
+app.use('/api', api)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

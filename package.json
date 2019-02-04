@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "test": "make test",
-    "start": "node ./bin/www",
+    "start": "nodemon ./bin/www",
+    "production": "NODE_ENV='production' node ./bin/www",
     "docker-build": "docker-compose build",
     "docker-push": "docker-compose push",
     "docker-start": "docker-compose up -d",
@@ -36,6 +37,7 @@
     "js-yaml": "^3.12.1",
     "jsonlint": "^1.6.3",
     "mocha": "^5.2.0",
+    "nodemon": "^1.18.9",
     "nyc": "^13.1.0",
     "stylelint": "^9.10.1",
     "uglify-es": "^3.3.9"
@@ -43,6 +45,7 @@
   "dependencies": {
     "body-parser": "^1.18.3",
     "cookie-parser": "~1.4.3",
+    "cors": "^2.8.5",
     "debug": "~2.6.9",
     "express": "^4.16.4",
     "jstransformer-markdown-it": "^2.1.0",
