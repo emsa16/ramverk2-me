@@ -1,9 +1,9 @@
 Om denna sida
 ==================================
 
-![Node.js logo](img/1200px-Node.js_logo.svg.png)
+[![Node.js logo](img/1200px-Node.js_logo.svg.png)](https://nodejs.org/en/)
 
-Denna sida är en del av kursen [*ramverk2*](https://dbwebb.se/kurser/ramverk2) på Blekinge Tekniska Högskola.
+Denna sida är en del av kursen [*ramverk2*](https://dbwebb.se/kurser/ramverk2-v1) på Blekinge Tekniska Högskola.
 
 Kursen omfattar:
 
