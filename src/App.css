@@ -54,23 +54,23 @@ main,
     font-style: italic;
 }
 
-.site-navbar ul {
+nav ul {
     list-style: none;
     text-align: center;
 }
 
-.site-navbar li {
+nav li {
     display: inline-block;
     margin: 0 0.5em;
 }
 
-.site-navbar a {
+nav a {
     font-size: 20px;
     text-decoration: none;
     color: grey;
 }
 
-.site-navbar .current {
+nav .current {
     font-weight: bold;
     text-decoration: underline;
 }
@@ -80,4 +80,22 @@ main,
     text-align: center;
     font-size: 13px;
     color: grey;
+}
+
+
+
+.App-logo {
+    animation: App-logo-spin infinite 20s linear;
+    height: 4em;
+    float: left;
+}
+
+@keyframes App-logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
 }

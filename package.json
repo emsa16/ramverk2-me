@@ -2,11 +2,12 @@
   "name": "ramverk2-me",
   "version": "2.0.1",
   "description": "Me page for ramverk2",
-  "main": "app.js",
   "scripts": {
-    "test": "make test",
-    "start": "nodemon ./bin/www",
-    "production": "NODE_ENV='production' node ./bin/www",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "deploy": "npm run build && rsync -av build/* deploy@emilsandberg.com:/var/www/me.emilsandberg.com/html/",
     "docker-build": "docker-compose build",
     "docker-push": "docker-compose push",
     "docker-start": "docker-compose up -d",
@@ -24,13 +25,20 @@
   "bugs": {
     "url": "https://github.com/emsa16/ramverk2-me/issues"
   },
-  "homepage": "https://github.com/emsa16/ramverk2-me#readme",
+  "homepage": "https://me.emilsandberg.com",
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
   "devDependencies": {
     "clean-css-cli": "^4.2.1",
     "codecov": "^3.1.0",
     "coveralls": "^3.0.2",
-    "eslint": "^5.12.1",
-    "eslint-plugin-pug": "^1.1.1",
     "eslint-plugin-react": "^7.12.4",
     "html-minifier": "^3.5.21",
     "htmlhint": "^0.10.1",
@@ -43,14 +51,9 @@
     "uglify-es": "^3.3.9"
   },
   "dependencies": {
-    "body-parser": "^1.18.3",
-    "cookie-parser": "~1.4.3",
-    "cors": "^2.8.5",
-    "debug": "~2.6.9",
-    "express": "^4.16.4",
-    "jstransformer-markdown-it": "^2.1.0",
-    "morgan": "^1.9.1",
-    "pug": "2.0.0-beta11",
-    "serve-favicon": "~2.4.5"
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "2.1.3"
   }
 }
