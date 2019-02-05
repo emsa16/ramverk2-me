@@ -4,7 +4,6 @@ jobs:
     working_directory: ~/mern-starter
     docker:
       - image: circleci/node:4.8.2
-      - image: mongo:3.4.4
     steps:
       - checkout
       - run:
@@ -12,7 +11,7 @@ jobs:
           command: 'sudo npm install -g npm@5'
       - restore_cache:
           key: dependency-cache-{{ checksum "package.json" }}
-      - run: make install
+      # - run: make install
       - run:
           name: install-npm-wee
           command: npm install
@@ -20,7 +19,7 @@ jobs:
           key: dependency-cache-{{ checksum "package.json" }}
           paths:
             - ./node_modules
-      - run: make test
+      # - run: make test
       - run:
           name: test
           command: npm test
