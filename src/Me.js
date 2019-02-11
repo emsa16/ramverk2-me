@@ -12,7 +12,7 @@ class Me extends Component {
     componentDidMount() {
         let that = this;
 
-        fetch("https://me.emilsandberg.com/index")
+        fetch("https://api.emilsandberg.com/index")
             .then(function(response) {
                 return response.json();
             })

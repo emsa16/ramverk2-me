@@ -14,7 +14,7 @@ class Report extends Component {
     getReport(kmom) {
         let that = this;
 
-        fetch("https://me.emilsandberg.com/reports/" + kmom)
+        fetch("https://api.emilsandberg.com/reports/" + kmom)
             .then(function(response) {
                 return response.json();
             })

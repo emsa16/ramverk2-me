@@ -12,7 +12,7 @@ class About extends Component {
     componentDidMount() {
         let that = this;
 
-        fetch("https://me.emilsandberg.com/about")
+        fetch("https://api.emilsandberg.com/about")
             .then(function(response) {
                 return response.json();
             })

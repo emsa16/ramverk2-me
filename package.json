@@ -7,14 +7,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy": "npm run build && rsync -av build/* deploy@emilsandberg.com:/var/www/me.emilsandberg.com/html/",
-    "docker-build": "docker-compose build",
-    "docker-push": "docker-compose push",
-    "docker-start": "docker-compose up -d",
-    "docker-stop": "docker-compose down",
-    "node1": "docker-compose up -d node9",
-    "node2": "docker-compose up -d node8",
-    "node3": "docker-compose up -d node6"
+    "deploy": "npm run build && rsync -av build/* deploy@emilsandberg.com:/var/www/me.emilsandberg.com/html/"
   },
   "repository": {
     "type": "git",
