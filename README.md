@@ -12,17 +12,13 @@ Projektet bygger på scaffolding från [Create React App](https://github.com/fac
 
     $ git clone https://github.com/emsa16/ramverk2-me
     $ cd ramverk2-me
-    $ npm|make install
-    $ npm|make test                 # OBS! npm test kör react-scripts test medan make test kör linters
-
-Såväl `npm` som `make` är möjliga att köra tillsammans med kommandona `install` och `test`
+    $ yarn install
+    $ yarn test
 
 ## Köra projektet
 
-    $ npm start                     # Starta React i utvecklingsläge (port 3000)
-    $ npm run build                 # Bygg appen för produktion i `build`-katalogen.
-    $ npm run deploy                # Bygg appen och för över filerna till produktionsservern
-
-När projektet körs i utvecklingsläge med `npm start` hittas den i webbläsaren på [http://localhost:3000](http://localhost:3000)
+    $ yarn start                 # Starta React i utvecklingsläge - körs på [http://localhost:3000](http://localhost:3000)
+    $ yarn build                 # Bygg appen för produktion i `build`-katalogen.
+    $ yarn deploy                # Bygg appen och för över filerna till produktionsservern
 
 BTH 2019
