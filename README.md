@@ -8,6 +8,9 @@
 
 Projektet bygger på scaffolding från [Create React App](https://github.com/facebook/create-react-app).
 
+## Krav
+Node och yarn behöver finnas installerade.
+
 ## Installera projektet
 
     $ git clone https://github.com/emsa16/ramverk2-me
@@ -17,8 +20,8 @@ Projektet bygger på scaffolding från [Create React App](https://github.com/fac
 
 ## Köra projektet
 
-    $ yarn start                 # Starta React i utvecklingsläge - körs på [http://localhost:3000](http://localhost:3000)
-    $ yarn build                 # Bygg appen för produktion i `build`-katalogen.
-    $ yarn deploy                # Bygg appen och för över filerna till produktionsservern
+    $ yarn start    # Starta React i utvecklingsläge - körs på [http://localhost:3000](http://localhost:3000)
+    $ yarn build    # Bygg appen för produktion i `build`-katalogen.
+    $ yarn deploy   # Bygg appen och för över filerna till produktionsservern
 
 BTH 2019
