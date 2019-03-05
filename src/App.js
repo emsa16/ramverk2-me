@@ -5,6 +5,7 @@ import NavLink from "./NavLink.js";
 import Me from './Me.js';
 import About from './About.js';
 import Realtime from './Realtime.js';
+import Chat from './Chat.js';
 import Report from './Report.js';
 import NotFound from './NotFound.js';
 import logo from './logo.svg';
@@ -24,6 +25,7 @@ class App extends Component {
                         <ul>
                             <li><NavLink to="/">Hem</NavLink></li>
                             <li><NavLink to="/about">Om</NavLink></li>
+                            <li><NavLink to="/chat">Chat</NavLink></li>
                             <li><NavLink to="/app">Appen</NavLink></li>
                             <li><NavLink to="/report/kmom01">Kmom01</NavLink></li>
                             <li><NavLink to="/report/kmom02">Kmom02</NavLink></li>
@@ -34,6 +36,7 @@ class App extends Component {
                     <Switch>
                         <Route exact path="/" component={Me} />
                         <Route exact path="/about" component={About} />
+                        <Route exact path="/chat" component={Chat} />
                         <Route exact path="/app" component={Realtime} />
                         <Route path="/report/:kmom" component={Report} />
                         <Route component={NotFound} />
