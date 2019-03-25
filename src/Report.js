@@ -1,6 +1,9 @@
 /*eslint no-unused-vars: "off"*/
 import React, { Component } from 'react';
 
+const apiUrl = 'http://localhost:3000/';
+// const apiUrl = 'https://api.emilsandberg.com/';
+
 class Report extends Component {
     constructor(props) {
         super(props);
@@ -14,16 +17,16 @@ class Report extends Component {
     getReport(kmom) {
         let that = this;
 
-        fetch("https://api.emilsandberg.com/reports/" + kmom)
-            .then(function(response) {
-                return response.json();
-            })
-            .then(function(result) {
-                that.setState({
-                    title: result.title,
-                    content: result.content,
-                    kmom: kmom
-                });
+        fetch(apiUrl + "reports/kmom/" + kmom)
+            .then(response => response.json())
+            .then(result => {
+                if (result) {
+                    that.setState({
+                        title: result.title,
+                        content: result.content,
+                        kmom: kmom
+                    });
+                }
             });
     }
 

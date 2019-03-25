@@ -29,10 +29,10 @@ class App extends Component {
                             <li><NavLink to="/about">Om</NavLink></li>
                             <li><NavLink to="/chat">Chat</NavLink></li>
                             <li><NavLink to="/app">Appen</NavLink></li>
-                            <li><NavLink to="/report/kmom01">Kmom01</NavLink></li>
-                            <li><NavLink to="/report/kmom02">Kmom02</NavLink></li>
-                            <li><NavLink to="/report/kmom03">Kmom03</NavLink></li>
-                            <li><NavLink to="/report/kmom04">Kmom04</NavLink></li>
+                            <li><NavLink to="/report/kmom/01">Kmom01</NavLink></li>
+                            <li><NavLink to="/report/kmom/02">Kmom02</NavLink></li>
+                            <li><NavLink to="/report/kmom/03">Kmom03</NavLink></li>
+                            <li><NavLink to="/report/kmom/04">Kmom04</NavLink></li>
                             <li><NavLink to="/login">Login</NavLink></li>
                         </ul>
                     </nav>
@@ -42,7 +42,7 @@ class App extends Component {
                         <Route exact path="/about" component={About} />
                         <Route exact path="/chat" component={Chat} />
                         <Route exact path="/app" component={Realtime} />
-                        <Route path="/report/:kmom" component={Report} />
+                        <Route path="/report/kmom/:kmom" component={Report} />
                         <Route exact path="/login" component={Login} />
                         <Route exact path="/register" component={Register} />
                         <Route component={NotFound} />
