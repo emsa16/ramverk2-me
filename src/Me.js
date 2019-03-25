@@ -1,6 +1,8 @@
 /*eslint no-unused-vars: "off"*/
 import React, { Component } from 'react';
 
+const apiUrl = 'https://api.emilsandberg.com/';
+
 class Me extends Component {
     constructor(props) {
         super(props);
@@ -12,7 +14,7 @@ class Me extends Component {
     componentDidMount() {
         let that = this;
 
-        fetch("https://api.emilsandberg.com/index")
+        fetch(apiUrl + "index")
             .then(function(response) {
                 return response.json();
             })

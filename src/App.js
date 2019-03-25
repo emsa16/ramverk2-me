@@ -7,6 +7,8 @@ import About from './About.js';
 import Realtime from './Realtime.js';
 import Chat from './Chat.js';
 import Report from './Report.js';
+import Login from './Login.js';
+import Register from './Register.js';
 import NotFound from './NotFound.js';
 import logo from './logo.svg';
 import './App.css';
@@ -31,6 +33,7 @@ class App extends Component {
                             <li><NavLink to="/report/kmom02">Kmom02</NavLink></li>
                             <li><NavLink to="/report/kmom03">Kmom03</NavLink></li>
                             <li><NavLink to="/report/kmom04">Kmom04</NavLink></li>
+                            <li><NavLink to="/login">Login</NavLink></li>
                         </ul>
                     </nav>
 
@@ -40,6 +43,8 @@ class App extends Component {
                         <Route exact path="/chat" component={Chat} />
                         <Route exact path="/app" component={Realtime} />
                         <Route path="/report/:kmom" component={Report} />
+                        <Route exact path="/login" component={Login} />
+                        <Route exact path="/register" component={Register} />
                         <Route component={NotFound} />
                     </Switch>
 
