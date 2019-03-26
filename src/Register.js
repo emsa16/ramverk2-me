@@ -4,6 +4,7 @@
  */
 
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 import api from './api';
 
@@ -44,7 +45,11 @@ class Register extends Component {
             .then(response => response.json())
             .then(result => {
                 if (result) {
-                    that.setState({status: result.message});
+                    that.setState({
+                        status: result.message,
+                        username: "",
+                        password: ""
+                    });
                 }
             });
     }
@@ -65,7 +70,7 @@ class Register extends Component {
                     <input type="submit" value="Register" />
                     <div>{this.state.status}</div>
                 </form>
-                <a href="/login">Login</a>
+                <Link to={"/login"}>Login</Link>
             </main>
         );
     }

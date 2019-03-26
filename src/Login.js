@@ -4,6 +4,7 @@
  */
 
 import React, { Component } from 'react';
+import { Link, Redirect } from 'react-router-dom';
 import api from './api';
 
 class Login extends Component {
@@ -12,7 +13,8 @@ class Login extends Component {
         this.state = {
             username: "",
             password: "",
-            status: ""
+            redirectToAdmin: false,
+            status: "",
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -28,8 +30,6 @@ class Login extends Component {
     }
 
     handleSubmit(event) {
-        let that = this;
-
         event.preventDefault();
 
         fetch(api.url + "login", {
@@ -43,16 +43,25 @@ class Login extends Component {
             .then(response => response.json())
             .then(result => {
                 if (result) {
-                    that.setState({status: result.message});
+                    this.setState({
+                        status: result.message,
+                    });
 
                     if (result.token) {
                         localStorage.setItem("JWT_TOKEN", result.token);
+                        this.setState({
+                            redirectToAdmin: true,
+                        });
                     }
                 }
             });
     }
 
     render() {
+        if (this.state.redirectToAdmin === true) {
+            return <Redirect to='/admin' />;
+        }
+
         return (
             <main>
                 <h1>Login</h1>
@@ -68,7 +77,7 @@ class Login extends Component {
                     <input type="submit" value="Login" />
                     <div>{this.state.status}</div>
                 </form>
-                <a href="/register">Register</a>
+                <Link to={"/register"}>Register</Link>
             </main>
         );
     }
