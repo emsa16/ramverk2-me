@@ -7,6 +7,7 @@ import Realtime from './Realtime.js';
 import Chat from './Chat.js';
 import Report from './Report.js';
 import Login from './Login.js';
+import Logout from './Logout.js';
 import Register from './Register.js';
 import AdminIndex from './index.component.js';
 import AdminCreate from './create.component';
@@ -17,6 +18,44 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 class App extends Component {
+    constructor(props) {
+        super(props);
+        const isLoggedIn = null !== localStorage.getItem("JWT_TOKEN");
+
+        this.state = {
+            isLoggedIn: isLoggedIn,
+        };
+
+        this.handleLoginToken = this.handleLoginToken.bind(this);
+    }
+
+    handleLoginToken(token) {
+        if (token) {
+            localStorage.setItem("JWT_TOKEN", token);
+            this.setState({isLoggedIn: true});
+        } else {
+            localStorage.removeItem("JWT_TOKEN");
+            this.setState({isLoggedIn: false});
+        }
+    }
+
+    loginLinks() {
+        if (this.state.isLoggedIn) {
+            return (
+                <span>
+                    <li><NavLink to="/logout">Log out</NavLink></li>
+                    <li><NavLink to="/admin">Admin</NavLink></li>
+                </span>
+            );
+        } else {
+            return (
+                <span>
+                    <li><NavLink to="/login">Login</NavLink></li>
+                </span>
+            );
+        }
+    }
+
     render() {
         return (
             <Router>
@@ -32,8 +71,7 @@ class App extends Component {
                             <li><NavLink to="/about">Om</NavLink></li>
                             <li><NavLink to="/chat">Chat</NavLink></li>
                             <li><NavLink to="/app">Appen</NavLink></li>
-                            <li><NavLink to="/login">Login</NavLink></li>
-                            <li><NavLink to="/admin">Admin</NavLink></li>
+                            { this.loginLinks() }
                             <li><NavLink to="/report/kmom/01">Kmom01</NavLink></li>
                             <li><NavLink to="/report/kmom/02">Kmom02</NavLink></li>
                             <li><NavLink to="/report/kmom/03">Kmom03</NavLink></li>
@@ -47,7 +85,14 @@ class App extends Component {
                         <Route exact path="/chat" component={Chat} />
                         <Route exact path="/app" component={Realtime} />
                         <Route path="/report/kmom/:kmom" component={Report} />
-                        <Route exact path="/login" component={Login} />
+                        <Route exact path="/login" component={() => <Login
+                            isLoggedIn={this.state.isLoggedIn}
+                            onLoginChange={this.handleLoginToken}
+                        />} />
+                        <Route exact path="/logout" component={() => <Logout
+                            isLoggedIn={this.state.isLoggedIn}
+                            onLoginChange={this.handleLoginToken}
+                        />} />
                         <Route exact path="/register" component={Register} />
                         <Route exact path="/admin" component={AdminIndex} />
                         <Route exact path='/admin/create' component={ AdminCreate } />

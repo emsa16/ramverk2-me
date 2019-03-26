@@ -1,4 +1,4 @@
-/*eslint no-unused-vars: "off", newline-after-var: "off", max-len: "off"*/
+/*eslint no-unused-vars: "off", max-len: "off"*/
 /**
  * Login management
  */
@@ -13,7 +13,6 @@ class Login extends Component {
         this.state = {
             username: "",
             password: "",
-            redirectToAdmin: false,
             status: "",
         };
 
@@ -48,17 +47,14 @@ class Login extends Component {
                     });
 
                     if (result.token) {
-                        localStorage.setItem("JWT_TOKEN", result.token);
-                        this.setState({
-                            redirectToAdmin: true,
-                        });
+                        this.props.onLoginChange(result.token);
                     }
                 }
             });
     }
 
     render() {
-        if (this.state.redirectToAdmin === true) {
+        if (this.props.isLoggedIn) {
             return <Redirect to='/admin' />;
         }
 
