@@ -1,4 +1,4 @@
-/*eslint no-unused-vars: "off", newline-after-var: "off", max-len: "off"*/
+/*eslint no-unused-vars: "off", max-len: "off"*/
 /**
  * To setup a websocket connection, and nothing more.
  */
@@ -56,8 +56,8 @@ class Chat extends Component {
      * @return {void}
      */
     outputLog(message) {
-        let now = new Date();
-        let timestamp = now.toLocaleTimeString();
+        const now = new Date();
+        const timestamp = now.toLocaleTimeString();
 
         this.setState({"output": `${this.state.output}${timestamp} ${message}<br />`});
     }
@@ -74,9 +74,9 @@ class Chat extends Component {
             return;
         }
 
-        let data = ("data" in msg) ? msg.data : "";
-        let nick = ("nickname" in msg && msg.nickname) ? msg.nickname : "anonymous";
-        let origin = ("origin" in msg && msg.origin) ? msg.origin : "server";
+        const data = ("data" in msg) ? msg.data : "";
+        const nick = ("nickname" in msg && msg.nickname) ? msg.nickname : "anonymous";
+        const origin = ("origin" in msg && msg.origin) ? msg.origin : "server";
 
         if (data) {
             if ("server" === origin) {
@@ -90,12 +90,13 @@ class Chat extends Component {
 
 
     formatMessageOut(messageText) {
-        let data = {"command": "message", "params": {"message": messageText}};
-        let re = /^\/([A-Za-z]+)\s*(\w*)/; // Regex matching '/' commands followed by text, e.g. /nick emil
-        let result = re.exec(messageText);
-        let nick;
+        let nick, data = {"command": "message", "params": {"message": messageText}};
+        const re = /^\/([A-Za-z]+)\s*(\w*)/; // Regex matching '/' commands followed by text, e.g. /nick emil
+        const result = re.exec(messageText);
+
         if (result && result.length > 1) {
-            let command = result[1];
+            const command = result[1];
+
             switch (command) {
                 case 'nick':
                     nick = result[2] ? result[2]: "";

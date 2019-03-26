@@ -1,4 +1,4 @@
-/*eslint no-unused-vars: "off", newline-after-var: "off", max-len: "off"*/
+/*eslint no-unused-vars: "off"*/
 /**
  * Report CRUD index
  */

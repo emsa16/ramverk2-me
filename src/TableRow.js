@@ -1,4 +1,4 @@
-/*eslint no-unused-vars: "off", newline-after-var: "off", max-len: "off"*/
+/*eslint no-unused-vars: "off"*/
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import api from './api';
