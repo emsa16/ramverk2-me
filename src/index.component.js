@@ -14,9 +14,15 @@ class AdminIndex extends Component {
         this.state = {
             reports: []
         };
+
+        this.getReports = this.getReports.bind(this);
     }
 
     componentDidMount() {
+        this.getReports();
+    }
+
+    getReports() {
         fetch(api.url + "reports/kmom")
             .then(response => response.json())
             .then(result => {
@@ -32,8 +38,8 @@ class AdminIndex extends Component {
     }
 
     tabRow() {
-        return this.state.reports.map(function(object, i) {
-            return <TableRow obj={object} key={i} />;
+        return this.state.reports.map((object, i) => {
+            return <TableRow obj={object} key={i} onChange={this.getReports} />;
         });
     }
 

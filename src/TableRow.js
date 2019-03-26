@@ -23,7 +23,10 @@ class TableRow extends Component {
             }),
         })
             .then(response => response.json())
-            .then(result => console.log(result))
+            .then(result => {
+                console.log(result);
+                this.props.onChange();
+            })
             .catch(err => console.log(err));
     }
 
