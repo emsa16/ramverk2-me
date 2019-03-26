@@ -6,7 +6,7 @@
     "preinstall": "([ -d .bin ] || mkdir .bin) && ([ -d build ] || mkdir build) && rm -rf build/*",
     "clean": "rm -rf build cache/*/* npm-debug.log coverage",
     "preclean-all": "yarn clean",
-    "clean-all": "rm -rf .bin vendor node_modules",
+    "clean-all": "rm -rf .bin vendor node_modules yarn.lock",
     "pretest": "yarn htmlhint && yarn stylelint && yarn eslint",
     "test": "react-scripts test --coverage",
     "start": "react-scripts start",
