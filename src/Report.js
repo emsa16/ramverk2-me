@@ -4,7 +4,6 @@
  */
 
 import React, { Component } from 'react';
-
 import api from './api';
 
 class Report extends Component {
@@ -18,13 +17,11 @@ class Report extends Component {
     }
 
     getReport(kmom) {
-        let that = this;
-
         fetch(api.url + "reports/kmom/" + kmom)
             .then(response => response.json())
             .then(result => {
                 if (result) {
-                    that.setState({
+                    this.setState({
                         title: result.title,
                         content: result.content,
                         kmom: kmom

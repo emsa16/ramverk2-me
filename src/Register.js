@@ -30,8 +30,6 @@ class Register extends Component {
     }
 
     handleSubmit(event) {
-        let that = this;
-
         event.preventDefault();
 
         fetch(api.url + "register", {
@@ -45,7 +43,7 @@ class Register extends Component {
             .then(response => response.json())
             .then(result => {
                 if (result) {
-                    that.setState({
+                    this.setState({
                         status: result.message,
                         username: "",
                         password: ""

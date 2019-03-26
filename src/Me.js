@@ -11,14 +11,10 @@ class Me extends Component {
     }
 
     componentDidMount() {
-        let that = this;
-
         fetch(api.url + "index")
-            .then(function(response) {
-                return response.json();
-            })
-            .then(function(result) {
-                that.setState({
+            .then(response => response.json())
+            .then(result => {
+                this.setState({
                     message: result.msg
                 });
             });

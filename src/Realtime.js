@@ -11,18 +11,13 @@ class Realtime extends Component {
     }
 
     componentDidMount() {
-        let that = this;
-
         fetch(api.url + "app")
-            .then(function(response) {
-                return response.json();
-            })
-            .then(function(result) {
-                that.setState({
+            .then(response => response.json())
+            .then(result => {
+                this.setState({
                     message: result.msg
                 });
             });
-
         document.title = "React App - Appen";
     }
 
