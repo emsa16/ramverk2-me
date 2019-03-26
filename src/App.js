@@ -1,7 +1,6 @@
 /*eslint no-unused-vars: "off"*/
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import NavLink from "./NavLink.js";
+import { BrowserRouter as Router, Switch, Route, NavLink } from 'react-router-dom';
 import Me from './Me.js';
 import About from './About.js';
 import Realtime from './Realtime.js';
@@ -26,7 +25,7 @@ class App extends Component {
                     </div>
                     <nav>
                         <ul>
-                            <li><NavLink to="/">Hem</NavLink></li>
+                            <li><NavLink exact to="/">Hem</NavLink></li>
                             <li><NavLink to="/about">Om</NavLink></li>
                             <li><NavLink to="/chat">Chat</NavLink></li>
                             <li><NavLink to="/app">Appen</NavLink></li>
