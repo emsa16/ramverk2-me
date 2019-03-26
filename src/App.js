@@ -76,6 +76,7 @@ class App extends Component {
                             <li><NavLink to="/report/kmom/02">Kmom02</NavLink></li>
                             <li><NavLink to="/report/kmom/03">Kmom03</NavLink></li>
                             <li><NavLink to="/report/kmom/04">Kmom04</NavLink></li>
+                            <li><NavLink to="/report/kmom/05">Kmom05</NavLink></li>
                         </ul>
                     </nav>
 
