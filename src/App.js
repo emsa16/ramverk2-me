@@ -12,6 +12,7 @@ import Register from './Register.js';
 import NotFound from './NotFound.js';
 import logo from './logo.svg';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 class App extends Component {
     render() {

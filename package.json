@@ -50,6 +50,7 @@
     "uglify-es": "^3.3.9"
   },
   "dependencies": {
+    "bootstrap": "^4.3.1",
     "react": "^16.8.2",
     "react-dom": "^16.8.2",
     "react-router-dom": "^4.3.1",
