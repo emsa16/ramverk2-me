@@ -1,8 +1,11 @@
 /*eslint no-unused-vars: "off"*/
+/**
+ * Report display
+ */
+
 import React, { Component } from 'react';
 
-const apiUrl = 'http://localhost:3000/';
-// const apiUrl = 'https://api.emilsandberg.com/';
+import api from './api';
 
 class Report extends Component {
     constructor(props) {
@@ -17,7 +20,7 @@ class Report extends Component {
     getReport(kmom) {
         let that = this;
 
-        fetch(apiUrl + "reports/kmom/" + kmom)
+        fetch(api.url + "reports/kmom/" + kmom)
             .then(response => response.json())
             .then(result => {
                 if (result) {

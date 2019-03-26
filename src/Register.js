@@ -5,8 +5,7 @@
 
 import React, { Component } from 'react';
 
-const apiUrl = 'http://localhost:3000/';
-// const apiUrl = 'https://api.emilsandberg.com/';
+import api from './api';
 
 class Register extends Component {
     constructor(props) {
@@ -34,7 +33,7 @@ class Register extends Component {
 
         event.preventDefault();
 
-        fetch(apiUrl + "register", {
+        fetch(api.url + "register", {
             method: "POST",
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify({
