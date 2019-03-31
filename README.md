@@ -24,4 +24,19 @@ Node och yarn behöver finnas installerade.
     $ yarn build    # Bygg appen för produktion i `build`-katalogen.
     $ yarn deploy   # Bygg appen och för över filerna till produktionsservern
 
+
+## Köra projektet i Docker
+
+    $ yarn docker-start     # Startar alla containers (se nedan)
+    $ yarn docker-stop      # Stoppar alla aktiva containers
+    $ yarn docker-build     # Bygger alla images nedan från respektive Dockerfile
+
+    $ yarn docker-node1     # node latest-alpine (testa på http://localhost:8030)
+    $ yarn docker-node2     # node 10-alpine (testa på http://localhost:8031)
+    $ yarn docker-node3     # node 8-alpine (testa på http://localhost:8032)
+
+    $ yarn test-node1       # Kör yarn test inuti node1-containern
+    $ yarn test-node2       # Kör yarn test inuti node2-containern
+    $ yarn test-node3       # Kör yarn test inuti node3-containern
+
 BTH 2019
