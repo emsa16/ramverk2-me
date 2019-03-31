@@ -1,6 +1,6 @@
 {
   "name": "ramverk2-me",
-  "version": "5.0.0",
+  "version": "6.0.0",
   "description": "Me page for ramverk2",
   "scripts": {
     "preinstall": "([ -d .bin ] || mkdir .bin) && ([ -d build ] || mkdir build) && rm -rf build/*",
