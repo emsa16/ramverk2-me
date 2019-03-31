@@ -4,6 +4,7 @@
  */
 
 import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom';
 import api from './api';
 
 class Report extends Component {
@@ -12,7 +13,8 @@ class Report extends Component {
         this.state = {
             title: "",
             content: "",
-            kmom: props.match.params.kmom
+            kmom: props.match.params.kmom,
+            kmom_routes: []
         };
     }
 
@@ -30,13 +32,38 @@ class Report extends Component {
             });
     }
 
+    getAllReports() {
+        fetch(api.url + "reports/kmom/")
+            .then(response => response.json())
+            .then(result => {
+                if (result) {
+                    let kmomRoutes = result.routes.map((i) => i.kmom);
+
+                    this.setState({
+                        kmom_routes: kmomRoutes
+                    });
+                }
+            });
+    }
+
+    reportList() {
+        return this.state.kmom_routes.map((nr) => {
+            let url = "/reports/kmom/" + nr;
+
+            return <li key={nr}><NavLink exact to={url} >Kmom{nr}</NavLink></li>;
+        });
+    }
+
     componentDidMount() {
-        this.getReport(this.state.kmom);
+        if (this.state.kmom) {
+            this.getReport(this.state.kmom);
+        }
+        this.getAllReports();
         document.title = "React App - Redovisningar";
     }
 
     componentDidUpdate(prevProps) {
-        if  (this.props.match.params.kmom !== this.state.kmom) {
+        if  (this.props.match.params.kmom && this.props.match.params.kmom !== this.state.kmom) {
             this.getReport(this.props.match.params.kmom);
         }
     }
@@ -44,6 +71,12 @@ class Report extends Component {
     render() {
         return (
             <main>
+                <nav>
+                    <ul>
+                        {this.reportList()}
+                    </ul>
+                </nav>
+
                 <h2>{ this.state.title }</h2>
                 <div dangerouslySetInnerHTML={ {__html: this.state.content} } />
             </main>
