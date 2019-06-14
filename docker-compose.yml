@@ -14,7 +14,7 @@ services:
         image: "ramverk2-frontend:node-10"
         build:
             context: .
-            dockerfile: docker/Dockerfile-node-latest
+            dockerfile: docker/Dockerfile-node-10
         ports:
             - "8031:3000"
         volumes:
