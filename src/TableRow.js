@@ -36,7 +36,7 @@ class TableRow extends Component {
         return (
             <tr>
                 <td>
-                    <Link to={"/report/kmom/"+kmom}>{kmom}</Link>
+                    <Link to={"/reports/kmom/"+kmom}>{kmom}</Link>
                 </td>
                 <td>
                     <Link to={"/admin/edit/"+kmom} className="btn btn-secondary">Edit</Link>
